@@ -54,7 +54,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
 {
     vector <Adresat> adresaci;
     Adresat adresat;
-    // string nazwaPlikuZAdresatami = "Adresaci.txt"; // nie ma tego u artura!!!
+
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;
@@ -110,31 +110,24 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
             switch(numerPojedynczejDanejAdresata)
             {
             case 1:
-                //adresat.id = atoi(pojedynczaDanaAdresata.c_str());
                 adresat.ustawId(atoi(pojedynczaDanaAdresata.c_str()));
                 break;
             case 2:
-                //adresat.idUzytkownika = atoi(pojedynczaDanaAdresata.c_str());
                 adresat.ustawIdUzytkownika(atoi(pojedynczaDanaAdresata.c_str()));
                 break;
             case 3:
-                //adresat.imie = pojedynczaDanaAdresata;
                 adresat.ustawImie(pojedynczaDanaAdresata);
                 break;
             case 4:
-                //adresat.nazwisko = pojedynczaDanaAdresata;
                 adresat.ustawNazwisko(pojedynczaDanaAdresata);
                 break;
             case 5:
-                //adresat.numerTelefonu = pojedynczaDanaAdresata;
                 adresat.ustawNrTelefonu(pojedynczaDanaAdresata);
                 break;
             case 6:
-                //adresat.email = pojedynczaDanaAdresata;
                 adresat.ustawEmail(pojedynczaDanaAdresata);
                 break;
             case 7:
-                //adresat.adres = pojedynczaDanaAdresata;
                 adresat.ustawAdres(pojedynczaDanaAdresata);
                 break;
             }

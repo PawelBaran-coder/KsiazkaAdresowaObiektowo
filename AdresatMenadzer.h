@@ -7,7 +7,6 @@
 #include <sstream>
 #include <fstream>
 
-//#include "UzytkownikMenadzer.h"
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 
@@ -20,7 +19,7 @@ class AdresatMenadzer
     PlikZAdresatami plikZAdresatami;
 
     Adresat podajDaneNowegoAdresata();
-    void wyswietlDaneAdresata();
+    void wyswietlDaneAdresata(Adresat adresat);
 
 public:
     AdresatMenadzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
@@ -28,8 +27,8 @@ public:
     {
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
+
     void dodajAdresata();
-    //void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika); // u artura tego nie ma!!!
     void wyswietlWszystkichAdresatow();
 };
 

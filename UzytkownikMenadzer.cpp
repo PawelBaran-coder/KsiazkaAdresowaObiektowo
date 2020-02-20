@@ -65,12 +65,8 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
     }
 }
 
-
-
 void UzytkownikMenadzer::logowanieUzytkownika()
 {
-    //AdresatMenadzer adresatMenadzer;
-    //Adresat adresat;
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
@@ -90,14 +86,9 @@ void UzytkownikMenadzer::logowanieUzytkownika()
                 if (uzytkownicy[i].pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
-                    cout << uzytkownicy[i].pobierzId() << endl;
                     system("pause");
                     idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
-                    //adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
-                    //adresatMenadzer.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
-                    //adresatMenadzer.idZalogowanegoUzytkownika = idZalogowanegoUzytkownika;
-                    //int idtest = adresatMenadzer.pobierzIdZalogowanegoUzytkownika();
-                    //cout << "idZalogowanego uzytkownika ustawione w uzytkownik menadzer: " << idtest << endl;
+
                     return;
                 }
             }
