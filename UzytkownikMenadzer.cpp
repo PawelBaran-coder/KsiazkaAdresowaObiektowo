@@ -1,10 +1,5 @@
 #include "UzytkownikMenadzer.h"
 
-int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika()
-{
-    return idZalogowanegoUzytkownika;
-}
-
 void UzytkownikMenadzer::rejestracjaUzytkownika()
 {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -141,4 +136,15 @@ void UzytkownikMenadzer::wylogowanieUzytkownika()
     //adresaci.clear();
 }
 
+bool UzytkownikMenadzer::czyUzytkownikJestZalogowany()
+{
+    if(idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
+}
 
+int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}

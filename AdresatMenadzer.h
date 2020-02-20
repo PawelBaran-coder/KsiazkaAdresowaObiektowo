@@ -7,7 +7,7 @@
 #include <sstream>
 #include <fstream>
 
-#include "UzytkownikMenadzer.h"
+//#include "UzytkownikMenadzer.h"
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 
@@ -15,22 +15,21 @@ using namespace std;
 
 class AdresatMenadzer
 {
-    //UzytkownikMenadzer uzytkownikMenadzer;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
+    vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
 
-    int idZalogowanegoUzytkownika;
-    int idOstatniegoAdresata;
-    vector <Adresat> adresaci;
-
-    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+    Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata();
 
 public:
-
-    void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika);
-    int pobierzIdZalogowanegoUzytkownika();
+    AdresatMenadzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
+        :plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
+    {
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    };
     void dodajAdresata();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    //void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika); // u artura tego nie ma!!!
     void wyswietlWszystkichAdresatow();
 };
 

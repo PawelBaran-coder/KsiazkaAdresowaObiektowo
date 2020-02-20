@@ -1,16 +1,5 @@
 #include "AdresatMenadzer.h"
 
-void AdresatMenadzer::ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika)
-{
-    if(noweIdZalogowanegoUzytkownika >= 0)
-    idZalogowanegoUzytkownika = noweIdZalogowanegoUzytkownika;
-}
-
-int AdresatMenadzer::pobierzIdZalogowanegoUzytkownika()
-{
-      return idZalogowanegoUzytkownika;
-}
-
 void AdresatMenadzer::dodajAdresata()
 {
     Adresat adresat;
@@ -18,20 +7,25 @@ void AdresatMenadzer::dodajAdresata()
     //system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
 
-    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    adresat = podajDaneNowegoAdresata();
     adresaci.push_back(adresat);
 
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
+    if(plikZAdresatami.dopiszAdresataDoPliku(adresat))
+    {
+        cout << "Nowy adresat zostal dodany" << endl;
+    }
+    else
+        cout << "Blad. Nie udalo sie dodac nowego adresata do pliku." << endl;
 
-    ++idOstatniegoAdresata;
+    //++idOstatniegoAdresata; // u artura tak nie jest!!!!
 }
 
-Adresat AdresatMenadzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+Adresat AdresatMenadzer::podajDaneNowegoAdresata()
 {
     Adresat adresat;
 
-    adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawId((plikZAdresatami.pobierzIdOstatniegoAdresata() + 1));
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
@@ -53,11 +47,11 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, 
     return adresat;
 }
 
-void AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+/*void AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
     idOstatniegoAdresata = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
 }
-
+*/
  void AdresatMenadzer::wyswietlWszystkichAdresatow()
  {
 
