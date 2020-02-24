@@ -8,7 +8,6 @@
 #include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
 
-
 using namespace std;
 
 class PlikZUzytkownikami
@@ -25,6 +24,5 @@ public:
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
-
 };
 #endif

@@ -3,7 +3,7 @@
 void AdresatMenadzer::dodajAdresata()
 {
     Adresat adresat;
-    //system("cls");
+    system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
 
     adresat = podajDaneNowegoAdresata();
@@ -46,7 +46,7 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata()
 
 void AdresatMenadzer::wyswietlWszystkichAdresatow()
 {
-    //system("cls");
+    system("cls");
     if (!adresaci.empty())
     {
         cout << "             >>> ADRESACI <<<" << endl;

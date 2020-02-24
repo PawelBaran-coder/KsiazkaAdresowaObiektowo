@@ -32,7 +32,7 @@ public:
     void logowanieUzytkownika();
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-
+bool czyUzytkownikJestZalogowany();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
 
