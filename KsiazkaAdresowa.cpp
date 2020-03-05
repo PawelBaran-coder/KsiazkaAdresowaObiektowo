@@ -44,11 +44,29 @@ void KsiazkaAdresowa::dodajAdresata()
     }
 }
 
+void KsiazkaAdresowa::usunAdresata()
+{
+    if(uzytkownikMenadzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenadzer->usunAdresata();
+    }
+     else
+    {
+        cout << "Aby usunac adresata, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
+}
+
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
     if(uzytkownikMenadzer.czyUzytkownikJestZalogowany())
     {
         adresatMenadzer->wyswietlWszystkichAdresatow();
+    }
+     else
+    {
+        cout << "Aby wyswietlic adresatow, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
     }
 }
 
