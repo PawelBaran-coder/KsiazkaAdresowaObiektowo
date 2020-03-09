@@ -21,16 +21,18 @@ class AdresatMenadzer
     Adresat podajDaneNowegoAdresata();
     int podajIdWybranegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
+    char wybierzOpcjeZMenuEdycja();
 
 public:
-    AdresatMenadzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
-        :plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
+    AdresatMenadzer(string nazwaPlikuZAdresatami, string nazwaTymczasowegoPlikuZAdresatami, int idZalogowanegoUzytkownika)
+        :plikZAdresatami(nazwaPlikuZAdresatami, nazwaTymczasowegoPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
     {
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
 
     void dodajAdresata();
     void usunAdresata();
+    void edytujAdresata();
     void wyswietlWszystkichAdresatow();
 };
 

@@ -9,7 +9,7 @@ char wczytajZnak();
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt","Adresaci_tymczasowo.txt");
 
     char wybor;
 
@@ -54,6 +54,10 @@ int main()
                 ksiazkaAdresowa.usunAdresata();
                 break;
 
+            case '6':
+                ksiazkaAdresowa.edytujAdresata();
+                break;
+
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
@@ -96,7 +100,7 @@ char wybierzOpcjeZMenuUzytkownika()
     //cout << "3. Wyszukaj po nazwisku" << endl;
     cout << "4. Wyswietl adresatow" << endl;
     cout << "5. Usun adresata" << endl;
-    //cout << "6. Edytuj adresata" << endl;
+    cout << "6. Edytuj adresata" << endl;
     cout << "---------------------------" << endl;
     cout << "7. Zmien haslo" << endl;
     cout << "8. Wyloguj sie" << endl;
