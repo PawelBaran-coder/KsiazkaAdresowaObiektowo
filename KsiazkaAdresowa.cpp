@@ -83,6 +83,19 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
     }
 }
 
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+    if(uzytkownikMenadzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenadzer->wyszukajAdresatowPoImieniu();
+    }
+     else
+    {
+        cout << "Aby wyswietlic adresatow, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
+}
+
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 {
     uzytkownikMenadzer.czyUzytkownikJestZalogowany();

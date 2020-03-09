@@ -38,6 +38,7 @@ public:
     void usunAdresata();
     void edytujAdresata();
     void wyswietlWszystkichAdresatow();
+    void wyszukajAdresatowPoImieniu();
 
 };
 
