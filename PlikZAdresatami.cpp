@@ -181,7 +181,7 @@ int PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata()
         return idOstatniegoAdresata;
     }
     else
-        cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
+        return idOstatniegoAdresata;
 }
 
 void PlikZAdresatami::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata)
@@ -190,8 +190,6 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata)
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string wczytanaLinia = "";
     int numerWczytanejLinii = 1;
-
-    //string nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
 
     odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
     tymczasowyPlikTekstowy.open(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI.c_str(), ios::out);
@@ -225,7 +223,6 @@ void PlikZAdresatami::edytujAdresataWPliku(Adresat adresat, int idEdytowanegoAdr
     string liniaZDanymiAdresata = "";
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
-    //string nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
 
     liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
 
