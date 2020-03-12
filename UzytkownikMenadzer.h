@@ -24,11 +24,12 @@ class UzytkownikMenadzer
     bool czyIstniejeLogin(string login);
 
 public:
-    UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami)
+    UzytkownikMenadzer(string nazwaPliku, string nazwaPlikuZAdresatami, string nazwaTymczasowegoPlikuZAdresatami)
+        : plikZUzytkownikami(nazwaPliku, nazwaPlikuZAdresatami, nazwaTymczasowegoPlikuZAdresatami)
     {
         idZalogowanegoUzytkownika = 0;
         uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-    };
+    }
 
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();

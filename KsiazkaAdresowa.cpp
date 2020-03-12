@@ -15,7 +15,7 @@ void KsiazkaAdresowa::logowanieUzytkownika()
     uzytkownikMenadzer.logowanieUzytkownika();
     if (uzytkownikMenadzer.czyUzytkownikJestZalogowany())
     {
-        adresatMenadzer = new AdresatMenadzer(NAZWA_PLIKU_Z_ADRESATAMI, NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
+        adresatMenadzer = new AdresatMenadzer(NAZWA_PLIKU_Z_UZYTKOWNIKAMI, NAZWA_PLIKU_Z_ADRESATAMI, NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
     }
 }
 
@@ -50,7 +50,7 @@ void KsiazkaAdresowa::usunAdresata()
     {
         adresatMenadzer->usunAdresata();
     }
-     else
+    else
     {
         cout << "Aby usunac adresata, nalezy najpierw sie zalogowac" << endl;
         system("pause");
@@ -59,11 +59,11 @@ void KsiazkaAdresowa::usunAdresata()
 
 void KsiazkaAdresowa::edytujAdresata()
 {
-     if(uzytkownikMenadzer.czyUzytkownikJestZalogowany())
+    if(uzytkownikMenadzer.czyUzytkownikJestZalogowany())
     {
         adresatMenadzer->edytujAdresata();
     }
-     else
+    else
     {
         cout << "Aby edytowac adresata, nalezy najpierw sie zalogowac" << endl;
         system("pause");
@@ -76,7 +76,7 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
     {
         adresatMenadzer->wyswietlWszystkichAdresatow();
     }
-     else
+    else
     {
         cout << "Aby wyswietlic adresatow, nalezy najpierw sie zalogowac" << endl;
         system("pause");
@@ -89,7 +89,7 @@ void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
     {
         adresatMenadzer->wyszukajAdresatowPoImieniu();
     }
-     else
+    else
     {
         cout << "Aby wyswietlic adresatow, nalezy najpierw sie zalogowac" << endl;
         system("pause");
@@ -102,7 +102,7 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
     {
         adresatMenadzer->wyszukajAdresatowPoNazwisku();
     }
-     else
+    else
     {
         cout << "Aby wyswietlic adresatow, nalezy najpierw sie zalogowac" << endl;
         system("pause");
