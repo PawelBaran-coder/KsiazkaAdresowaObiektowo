@@ -124,7 +124,6 @@ void UzytkownikMenadzer::wylogowanieUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
     cout << endl << "Wylogowales sie!" << endl << endl;
-    //adresaci.clear();
 }
 
 bool UzytkownikMenadzer::czyUzytkownikJestZalogowany()
